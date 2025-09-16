@@ -1,0 +1,113 @@
+body{
+   animation: change-color 10s infinite alternate;
+}
+
+@keyframes change-color {
+   0% {background-color:lemonchiffon;} 
+   50% {background-color:paleturquoise;}
+   100% {background-color: mintcream;}
+
+}
+
+ .title{
+   font-family:Georgia, 'Times New Roman', Times, serif;
+   color:crimson;
+   margin: 50px;
+   text-align: center;
+   margin: 80px auto;
+   animation: skew 2.5s infinite alternate;
+ }
+
+ @keyframes skew {
+   0% {transform: skew(0deg, 0deg);}
+   100% {transform: skew(5deg, 10deg);}
+ }
+
+
+ .square {
+    background-color: cornflowerblue;
+    width: 200px;
+    height:200px;
+    border-radius: 20px;
+    margin: 75px auto;
+    transition: transform 1s;
+}
+
+.square:hover {
+   background-color:crimson;
+   transform: rotate(30deg);
+} 
+
+.button-div{
+text-align:center; 
+margin:75px 0px;
+}
+
+.button{ 
+   background-color:cadetblue;
+   color:#fff;
+   padding: 20px; 
+   border-radius: 10px;
+   text-decoration: none;
+   display: inline-block;
+   transition: all .5s;
+}
+
+.button:hover{
+   background-color:crimson;
+   transform: scale(1.5)
+}
+
+.loading{
+   color:mintcream;
+   font-family:Georgia, 'Times New Roman', Times, serif;
+   animation: stretch 5s infinite alternate;
+   width: 80vw;
+   background-color:crimson;
+}
+
+@keyframes stretch {
+0% {width: 100px;}
+100% {width: 80vw;}
+}
+
+/* new hover element */
+.transition-box {
+    width: 200px;
+    height: 100px;
+    margin: 40px auto;
+    background-color: mediumseagreen;
+    color: white;
+    font-size: 20px;
+    line-height: 100px;
+    text-align: center;
+    border-radius: 15px;
+    transition: background-color 0.5s ease, transform 0.5s ease;
+    cursor: pointer;
+}
+
+.transition-box:hover {
+    background-color: darkorange;
+    transform: scale(1.2);
+}
+
+/* new css animation */
+.animated-circle {
+    width: 100px;
+    height: 100px;
+    margin: 50px auto;
+    background-color: tomato;
+    border-radius: 50%;
+    animation: bounce 3s infinite ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+        background-color: tomato;
+    }
+    50% {
+        transform: translateY(-50px);
+        background-color: orangered;
+    }
+}

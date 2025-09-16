@@ -1,0 +1,39 @@
+
+ .title{
+   font-family:Georgia, 'Times New Roman', Times, serif;
+   color:crimson;
+   margin: 50px;
+ }
+ .square {
+    background-color: cornflowerblue;
+    width: 200px;
+    height:200px;
+    border-radius: 20px;
+    margin: 75px auto;
+    transition: transform 1s;
+}
+
+.square:hover {
+   background-color:crimson;
+   transform: rotate(30deg);
+} 
+
+.button-div{
+text-align:center; 
+margin:75px 0px;
+}
+
+.button{ 
+   background-color:cadetblue;
+   color:#fff;
+   padding: 20px; 
+   border-radius: 10px;
+   text-decoration: none;
+   display: inline-block;
+   transition: all .5s;
+}
+
+.button:hover{
+   background-color:crimson;
+   transform: scale(1.5)
+}
