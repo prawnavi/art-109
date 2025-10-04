@@ -1,133 +1,224 @@
-/*
-COLOR PALETTE
-
-Dark green    #3c8453
-Sandy beige   #bcaa96
-Dark gray     #222222
-Light gray    #d3d4d6
-Off-white     #f6f6f6
-*/
-
-/* GLOBAL STYLES 
-------------------------------------*/
-/* 
-  https://www.paulirish.com/2012/box-sizing-border-box-ftw/
-*/
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 62.5%;
 }
 *, *:before, *:after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 html, body {
-    height: 100%;
-}
-body {
-    background: rgb(198, 218, 255);
-    margin: 0;
+  height: 100%;
 }
 
-/* links */
+body {
+  background: rgb(198, 218, 255);
+  margin: 0;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 1.5rem;
+  color: #222;
+}
+
 a {
-    color: firebrick;
+  color: firebrick;
 }
 a:hover {
-    color: lavender;
-    text-decoration: none;
+  color: lavender;
+  text-decoration: none;
 }
 footer a {
-    color: firebrick;
+  color: firebrick;
 }
 footer a:hover {
-    color: firebrick;
+  color: firebrick;
 }
 
 .btn {
-    background: cornflowerblue;
-    color: lemonchiffon;
-    text-decoration: none;
+  background: cornflowerblue;
+  color: lemonchiffon;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 600;
 }
 
 .content-wrapper {
-    margin: 0 auto;
-    padding: 30px;
-    max-width: 900px;
+  margin: 0 auto;
+  padding: 30px;
+  max-width: 900px;
 }
 
+h1, h2, h3 {
+  font-family: 'Caveat', cursive;
+  font-weight: 400;
+  margin: 0;
+}
 
-/* HOME
-------------------------------------*/
+h1 {
+  font-size: 7rem;
+  line-height: 0.85;
+}
+
+h2 {
+  font-size: 3.6rem;
+}
+
+h3 {
+  font-size: 2.4rem;
+}
+
 .home {
-    background: url(../images/bg-home-office-studio.jpg) no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
+  background: url(../images/bg-home-office-studio.jpg) no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
 }
+
 .home .content-wrapper {
-    background: rgb(198, 218, 255 / 0.9);
-    flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
+.content-bg {
+  background: rgb(198, 218, 255);
+  padding: 30px;
+  border-radius: 12px;
+}
 
-/* RESUME
-------------------------------------*/
 .resume header::before {
-    background: url(../images/bg-home-office-studio.jpg) center;
-    background-size: cover;
-    content: "";
-    display: block;
-    height: 375px;
+  background: url(../images/bg-home-office-studio.jpg) center;
+  background-size: cover;
+  content: "";
+  display: block;
+  height: 375px;
 }
+
 .resume-section {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
 }
+
 .resume-section h2 {
-    border-bottom: 2px dashed lavender;
+  border-bottom: 2px dashed lavender;
+  padding-bottom: 5px;
 }
+
 .download-link {
-    position: fixed;
-    top: 5px;
-    left: 5px;
+  position: fixed;
+  top: 5px;
+  left: 5px;
+  z-index: 10;
 }
 
+.project-wrapper {
+  display: block;
+}
 
-/* PROFILE
-------------------------------------*/
 .project-item {
-    display: flow-root;
-    margin: 30px 0;
+  margin: 30px 0;
 }
+
 .project-item img {
-    width: 300px;
+  width: 300px;
+}
+
+@media screen and (min-width: 860px) {
+  .project-item {
+    display: flow-root;
+  }
+  .project-item img {
     float: left;
     margin-right: 20px;
+  }
 }
 
+@media screen and (min-width: 650px) and (max-width: 859px) {
+  .project-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+  }
+  .project-item img {
+    width: 100%;
+    float: none;
+    margin: 0;
+  }
+}
 
-/* PROJECTS
-------------------------------------*/
+.work-item {
+  margin: 30px 0;
+}
 
-/* WORK EXPERIENCE
-------------------------------------*/
+@media screen and (min-width: 860px) {
+  .work-details {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+  }
+  .work-summary p {
+    margin: 0;
+  }
+}
 
-/* EDUCATION
-------------------------------------*/
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: 5rem;
+  }
+  h2 {
+    font-size: 2.6rem;
+  }
+  .content-wrapper {
+    padding: 10px;
+  }
+  .content-bg {
+    padding: 20px;
+  }
+  .btn.download-link {
+    position: static;
+    display: block;
+    margin: 10px auto;
+  }
+  .resume header::before {
+    height: 200px;
+  }
+  .work-item img,
+  .project-item img {
+    width: 100%;
+    margin-bottom: 10px;
+    float: none;
+  }
+}
 
-
-/* FOOTER
-------------------------------------*/
 footer {
-    background: cornflowerblue;
-    color: #d3d4d6;
+  background: cornflowerblue;
+  color: #d3d4d6;
 }
-.socials {
-    list-style-type: none;
-    padding: 0;
+
+@media screen and (max-width: 859px) {
+  footer {
+    text-align: center;
+    padding: 10px;
+  }
+  footer ul.socials {
+    justify-content: center;
+    margin-top: 10px;
+  }
 }
-.socials li {
-    display: inline-block;
+
+@media screen and (min-width: 860px) {
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  footer ul.socials {
+    margin-top: 0;
+  }
 }
-.socials img {
-    width: 32px;
+
+@media screen and (max-width: 650px) {
+  body.home .content-wrapper {
+    padding: 10px;
+  }
+  body.home .content-bg {
+    padding: 20px;
+  }
 }
