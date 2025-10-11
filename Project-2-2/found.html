@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Found</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+</head>
+<body class="found-page">
+
+  <div class="center-container">
+    <img src="images/bunny.gif" alt="Bunny GIF" class="bunny" id="found-bunny">
+    <p id="found-text" class="fade-text"></p>
+  </div>
+
+  <div id="timer-display" class="timer-background"></div>
+
+  <script src="js/script.js"></script>
+
+  <script>
+    window.onload = async function() {
+      startFoundTimer(); // timer starts when found page loads
+      var elapsed = getElapsedTime();
+      var textElement = document.getElementById('found-text');
+      var bunny = document.getElementById('found-bunny');
+
+      if (elapsed <= 15) {
+        // show “on time” message
+        await showSequence(["look who showed up on time!"], textElement);
+
+        // fade-in popup with "good job" message
+        setTimeout(function() {
+          createPopupWindow({
+            title: "good job.",
+            content: `
+              <p>catch me later.</p>
+              <button class="go-button" onclick="restartJourney()">ok</button>
+            `,
+            stay: true,
+            rightOfBunny: true
+          });
+        }, 2000);
+
+      } else {
+        // user too slow
+        if (bunny) bunny.style.display = "none";
+        createPopupWindow({
+          title: "ALERT",
+          content: `
+            <p>You took too long. What were you doing?</p>
+            <p><strong>THE RABBIT HAS RUN AWAY</strong></p>
+            <button class="go-button" onclick="restartJourney()">Chase again?</button>
+          `,
+          stay: true,
+          rightOfBunny: true
+        });
+      }
+    };
+  </script>
+</body>
+</html>
+
+

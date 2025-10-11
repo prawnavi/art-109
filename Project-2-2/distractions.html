@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Distractions</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body class="distractions-page">
+
+<div id="distraction-container"></div>
+
+<script src="js/script.js"></script>
+<script>
+window.onload = function() {
+
+  initDistractions(); 
+
+  var floatingCount = 10;
+  var floatingTexts = [];
+
+  for (var i = 0; i < floatingCount; i++) {
+    var el = document.createElement('div');
+    el.textContent = '<CLICK ME>';
+    el.className = 'floating-text hidden-text';
+
+    var scrollHeight = document.body.scrollHeight || 8000;
+    el.style.top = Math.random() * (scrollHeight - window.innerHeight) + 'px';
+    el.style.left = Math.random() * 90 + 'vw';
+    el.style.fontSize = (20 + Math.random() * 60) + 'px';
+
+    el.onclick = function() {
+      this.parentNode.removeChild(this);
+      window.location.href = 'did-you-forget.html';
+    };
+
+    document.body.appendChild(el);
+    floatingTexts.push(el);
+  }
+
+  var revealed = false;
+  window.onscroll = function() {
+    if (!revealed) {
+      for (var i = 0; i < floatingTexts.length; i++) {
+        floatingTexts[i].className = 'floating-text';
+      }
+      revealed = true;
+    }
+  };
+
+};
+</script>
+
+<style>
+.floating-text {
+  position: absolute;
+  color: white;
+  font-family: 'Pixelify Sans', monospace;
+  font-weight: 500;
+  text-shadow: 0 0 6px rgba(255,255,255,0.5);
+  cursor: pointer;
+  user-select: none;
+  z-index: 3000;
+  transition: opacity 2s ease;
+  animation-name: floatAround;
+  animation-duration: 30s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.hidden-text {
+  opacity: 0;
+}
+
+@keyframes floatAround {
+  0% {transform: translate(0,0) rotate(0deg);}
+  25% {transform: translate(20vw,10vh) rotate(5deg);}
+  50% {transform: translate(-25vw,25vh) rotate(-3deg);}
+  75% {transform: translate(15vw,-15vh) rotate(2deg);}
+  100% {transform: translate(0,0) rotate(0deg);}
+}
+
+.floating-text:nth-child(odd) {animation-duration:28s;}
+.floating-text:nth-child(even){animation-duration:34s;}
+</style>
+
+</body>
+</html>
