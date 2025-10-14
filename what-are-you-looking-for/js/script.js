@@ -142,7 +142,7 @@ function initDistractions() {
   ];
 
   var popupColors = [
-    "#48104b", "#e1ffdb", "#c0ff39", "#398eff",
+    "#813f84ff", "#e1ffdb", "#c0ff39", "#398eff",
     "#4c52ae", "#efff39", "#b4064a", "#d88368"
   ];
 
@@ -279,7 +279,7 @@ function stopFoundTimer() {
   }
 }
 
-// stop if leaving
+/* stop if leaving */
 window.onbeforeunload = function () {
   stopFoundTimer();
 };
