@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+:root {
+  --animation-duration: 1500ms;
+  --hover-animation-duration: 750ms;
+}
+
+@keyframes pulse-button {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%)  scale(1.5);
+    opacity: 0;
+  }
+}
+@keyframes pulse-img {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+.dbox-donation-button[style*="position: fixed"], .dbox-donation-page-button[style*="position: fixed"] {
+  &:hover { --animation-duration: var(--hover-animation-duration); }
+
+  & img { --animation-name: pulse-img; }
+  &:after { --animation-name: pulse-button; }
+
+  & img, &:after {
+    animation: var(--animation-name) var(--animation-duration) ease-out infinite;
+  }
+
+  &:after {
+    content: "";
+
+    position: absolute;
+    left: 27%;
+    top: 50%;
+
+    width: 200px;
+    height: 200px;
+
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+  }
+}
+
+.dbox-reminder-widget {
+  --background-color: #ffffff;
+  --border-color: #D1D5DB;
+  --color: #1F2A37;
+  --img-color: #F70059;
+  --close-icon-color: #1F2A37;
+  & *:hover { background: #F9FAFB; }
+
+  display: flex;
+  align-items: center;
+
+  position: fixed;
+  z-index: 9999;
+  right: 10px;
+  bottom: 30px;
+
+  background-color: var(--background-color);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+
+  box-sizing: unset;
+
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  transform: translateX(100%);
+
+  & .dbox-reminder-widget__popup-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 19px;
+
+    color: var(--color);
+
+    cursor: pointer;
+    text-decoration: none;
+
+    border-right: 1px solid var(--border-color);
+    border-radius: 6px 0px 0px 6px;
+    box-sizing: unset;
+
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+
+    & svg {
+      box-sizing: unset;
+      fill: var(--img-color);
+      width: 18px;
+      animation: pulse-img var(--animation-duration) infinite ease-in-out;
+    }
+
+    &:hover { --animation-duration: var(--hover-animation-duration); }
+  }
+
+  & .dbox-reminder-widget__close-button {
+    padding: 24px 16px;
+
+    cursor: pointer;
+
+    border-radius: 0px 6px 6px 0px;
+    box-sizing: unset;
+
+    fill: var(--close-icon-color);
+  }
+}
+.dbox-reminder-widget--show {
+  transform: translateX(0%);
+}
