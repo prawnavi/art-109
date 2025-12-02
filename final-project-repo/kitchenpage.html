@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="background:url('images/pixelkitchen.png'); background-size:cover;">
+
+<!-- kitchen intro-->
+<div id="kitchen-intro" class="popup" style="display:block;">
+  <p style="font-size:1.4rem; margin-bottom:10px;">enter kitchen</p>
+  <p style="font-size:1rem;">make the reaper's favorite hot chocolate drink to replenish his spirits :)</p>
+  <button class="pixel-button" id="intro-close">OK</button>
+</div>
+
+<!-- kitchen items -->
+<div class="click-area spices-button kitchen-item"
+     data-img="images/stuff.png"
+     data-desc="You found the spices! Cacao nibs, vanilla extract, cinnamon, and cardamom!">
+</div>
+
+<div class="click-area fridge-button kitchen-item"
+     data-img="images/milk.png"
+     data-desc="You found the Milk!"></div>
+
+<img class="kitchen-item"
+     data-img="images/mug.png"
+     data-desc="You found the Mug."
+     src="images/mug.png"
+     style="position:absolute; top:45%; left:20%; width:120px;">
+
+<img class="kitchen-item"
+     data-img="images/mortarpestle.png"
+     data-desc="You collected the Mortar & Pestle."
+     src="images/mortarpestle.png"
+     style="position:absolute; top:40%; left:65%; width:120px;">
+
+<img class="kitchen-item"
+     data-img="images/whisk.png"
+     data-desc="You picked up the Whisk."
+     src="images/whisk.png"
+     style="position:absolute; top:45%; left:28%; width:120px;">
+
+<img class="kitchen-item"
+     data-img="images/knife.png"
+     data-desc="You found the Knife."
+     src="images/knife.png"
+     style="position:absolute; top:45%; left:58%; width:120px;">
+
+<!-- pop-up windows -->
+<div id="popup" class="popup">
+    <img id="popup-img">
+    <p id="popup-text"></p>
+    <button class="pixel-button popup-close" id="popup-close">OK</button>
+</div>
+
+<!-- continue button -->
+<button id="nextBtn"
+        class="pixel-button"
+        style="display:none; position:fixed; bottom:20px; left:50%; transform:translateX(-50%);"
+        onclick="location='recipe.html'">
+  Continue
+</button>
+
+<script src="js/script.js"></script>
+</body>
+</html>
+
+
