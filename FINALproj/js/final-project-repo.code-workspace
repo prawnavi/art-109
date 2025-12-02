@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "../../final-project-repo"
+		},
+		{
+			"path": "../images"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../css"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "final-project-repo",
+		"liveServer.settings.port": 5501
+	}
+}
