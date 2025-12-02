@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+
+/* color palette 
+white 
+#1a202e — background color 
+#546c70 — pop-up window color 
+
+*/
+
+/* startpage */
+
+#placeholder {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.start-ui {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 10;
+  text-align: right;
+}
+
+.start-title {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.start-play {
+  margin-top: 10px;
+  padding: 8px 20px;
+  font-size: 1rem; 
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inconsolata", sans-serif;
+  background-color: #1a202e;
+  color: rgb(235, 235, 255);
+  overflow-x: hidden;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.dialogue-text {
+  font-family: 'Inconsolata', monospace;
+  font-size: 1.3rem;
+  color: white;
+  background: rgba(0,0,0,0.4);
+  padding: 20px;
+  margin: 10px auto;
+  text-align: center;
+  display: inline-block;
+  border: none; 
+}
+
+.dialogue-dropdown {
+  width: 60%;
+  margin: 10px auto;
+  background: #2c364b;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.dialogue-dropdown summary {
+  font-size: 1.2rem;
+  font-family: Inconsolata;
+  list-style: none;
+}
+
+.dialogue-dropdown p {
+  margin-top: 10px;
+}
+
+/* reaper */
+
+.reaper-large {
+  width: 900px;
+  image-rendering: pixelated;
+  display: block;
+  margin: 0 auto;
+}
+
+/* grimhouse */
+
+.scroll-space {
+  height: 8000px;   
+  width: 100%;
+  position: relative;
+  background: #1a202e;
+}
+
+.house-instruction {
+  position: fixed;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: Inconsolata, monospace;
+  color: white;
+  font-size: 1.3rem;
+  z-index: 10;
+}
+
+#house {
+  width: 450px;
+  image-rendering: pixelated;
+  position: absolute;
+  left: 50%;
+  bottom: 50px;      
+  transform: translateX(-50%);
+  transition: transform 0.15s;
+  cursor: pointer;
+}
+
+#house:hover {
+  transform: translateX(-50%) scale(1.08);
+}
+
+
+/* button */
+
+.pixel-button {
+  font-family: "Pixelify Sans", sans-serif;
+  padding: 12px 28px;
+  font-size: 1.2rem;
+  color: white;
+  background: #2c364b;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  image-rendering: pixelated;
+  transition: 0.1s;
+}
+
+.pixel-button:hover {
+  background: #3b4761;
+}
+
+.pixel-button:active {
+  background: #1f2533;
+}
+
+/* kitchen pop up windows */
+
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #546c70;
+  border: none;
+  padding: 25px;
+  width: 300px;
+  text-align: center;
+  display: none;
+  z-index: 9999;
+}
+
+.popup img {
+  width: 140px;
+  image-rendering: pixelated;
+  display: block;
+  margin: 20px auto;
+}
+
+.popup-close {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+
+.fade {
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fridge-button {
+  top: 20%;
+  left: 80%;
+  width: 200px; 
+  height: 300px; 
+}
+.spices-button {
+  top: 35%;  
+  left: 2%; 
+  width: 180px; 
+  height: 100px;
+}
+
+.click-area {
+  position: absolute;
+  cursor: pointer;  
+}
+
+/* recipe page stuffs */
+
+.recipe-container {
+  width: 70%;
+  margin: 40px auto;
+  color: white;
+}
+
+.recipe-title {
+  font-family: "Pixelify Sans", sans-serif;
+  color: #546c70;
+  text-align: center;
+  font-size: 2.2rem;
+}
+
+.recipe-step {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.recipe-icon {
+  width: 120px;
+  image-rendering: pixelated;
+}
+
+.recipe-container p {
+  text-align: center;
+}
+
+
+.replay-button {
+  font-family: "Pixelify Sans", sans-serif;
+  width: 200px;   
+  height: auto;        
+  position: fixed;  
+  bottom: 40px;      
+  right: 50px;           
+  font-size: 1rem; 
+  padding: 12px 28px;
+  font-size: 1.2rem;
+  color: white;
+  background: #2c364b;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  image-rendering: pixelated;
+  transition: 0.1s;      
+}
+
+
