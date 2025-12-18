@@ -6,20 +6,19 @@ let playBtn2 = document.querySelector("#play-button-2");
 let pauseBtn = document.querySelector("#pause-button");
 let pauseBtn2 = document.querySelector("#pause-button-2");
 
-playBtn.addEventListener("click", async () => {
-  await Tone.start(); // unlock audio
+playBtn.addEventListener("click", function(){ 
   song.play();
 });
 
-playBtn2.addEventListener("click", () => {
+playBtn2.addEventListener("click", function(){
   song2.play();
 });
 
-pauseBtn.addEventListener("click", () => {
+pauseBtn.addEventListener("click", function() {
   song.pause();
 });
 
-pauseBtn2.addEventListener("click", () => {
+pauseBtn2.addEventListener("click", function() {
   song2.pause();
 });
 
